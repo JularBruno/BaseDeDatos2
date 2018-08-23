@@ -26,7 +26,7 @@ FROM film
 WHERE film_id IN (SELECT film_id FROM film_actor
 					INNER JOIN actor USING (actor_id)
 					WHERE TRIM(LOWER(CONCAT(actor.first_name, ' ', actor.last_name)))
-					LIKE TRIM(LOWER(REPLACE(REPLACE(' Ricardo, Darin', ',', ''), '.', ''))));
+					LIKE TRIM(LOWER(REPLACE(REPLACE(' asd, asd', ',', ''), '.', ''))));
 
 
 #4
