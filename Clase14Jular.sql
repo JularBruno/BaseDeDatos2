@@ -46,15 +46,20 @@ SELECT CONVERT((SELECT CURRENT_TIME), CHAR);
 
 SELECT CAST((SELECT CURRENT_TIME) AS CHAR);
 
-
+#In many ways CAST and CONVERT are similar. Both are used to convert data from one type to another. 
+							 
 #6
-
+#The MySQL IFNULL() and COALESCE() functions are kind of similar, both let you return an alternative value if an expression is NULL
+							 
 SELECT f.title, inventory_id, IFNULL(return_date, 'No devuelta')
 FROM rental
 INNER JOIN inventory USING (inventory_id)
 INNER JOIN film f USING (film_id);
+							 
 
 SELECT f.title, inventory_id, COALESCE(return_date, 'No devuelta')
 FROM rental
 INNER JOIN inventory USING (inventory_id)
 INNER JOIN film f USING (film_id);
+
+#Nvl() is the same but for Oracle, and ISNULL() works in SQLServer.
